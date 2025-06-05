@@ -19,7 +19,8 @@ jobs:
         working-directory: ./demo
 
       - name: Build with Maven
-        run: mvn -DskipTests -B package --no-transfer-progress --file ./demo/pom.xml
+        run: mvn -DskipTests -B package --no-transfer-progress --file ./pom.xml
+        working-directory: ./demo
 
       - uses: actions/upload-artifact@master
         with:
