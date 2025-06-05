@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.3.0
 
-       #Cache the dependecies to speed up eexcution
+       #Cache the dependecies to speed up execution.Changes visible after first execution.
       - name: Cache the Maven packages to speed up build
         uses: actions/cache@v3
         with:
