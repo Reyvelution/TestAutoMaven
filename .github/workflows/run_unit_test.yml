@@ -14,10 +14,10 @@ jobs:
     steps: 
       - name: Checkout
       - uses: actions/checkout@v4
+      - name: SetUp Java
       - uses: actions/setup-java@v4
         with:
-          distribution: 'zulu' # See 'Supported distributions' for available options
-          java-version: '21'
+          java-version: '17'
 
       - name: run unit test
         run: mvn -B package --file pom.xml
