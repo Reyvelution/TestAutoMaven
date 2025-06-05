@@ -19,10 +19,10 @@ jobs:
         working-directory: ./demo
 
       - name: Build with Maven
-        run: mvn -DskipTests -B package --no-transfer-progress --file ./pom.xml
-        working-directory: ./demo
+        run: mvn -DskipTests -B package --no-transfer-progress --file ./demo/pom.xml
+       # working-directory: ./demo
 
       - uses: actions/upload-artifact@master
         with:
-          name: digibank.war
-          path: ./target/*demo*.war
+          name: target.war
+          path: ./demo/target/*demo*.war
