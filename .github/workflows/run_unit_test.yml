@@ -1,4 +1,4 @@
-me: run unit tests of feature branches
+name: run unit tests of feature branches
 
 on:
   push:
