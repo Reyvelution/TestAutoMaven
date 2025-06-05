@@ -1,4 +1,4 @@
-name: nightly build at 11pm
+name: nightly build at 8:15 pm
 
 on:
   push: 
