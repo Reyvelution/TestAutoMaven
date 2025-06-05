@@ -1,4 +1,4 @@
-name: run unit tests of feature branches
+me: run unit tests of feature branches
 
 on:
   push:
@@ -13,12 +13,8 @@ jobs:
 
     steps: 
       - name: Checkout
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v3.3.0
 
-      - name: SetUp Java
-      - uses: actions/setup-java@v4
-        with:
-          java-version: '17'
 
       - name: run unit test
-        run: mvn -B package --file pom.xml
+        run: mvn test
