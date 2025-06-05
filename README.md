@@ -1,1 +1,1 @@
-A Simple Maven Project
+A Simple Maven Project.j
