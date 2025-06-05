@@ -17,4 +17,4 @@ jobs:
 
 
       - name: run unit test
-        run: mvn test
+        run: mvn test --file ./pom.xml
