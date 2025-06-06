@@ -23,13 +23,13 @@ jobs:
       #Run the Junit test,continue even if a single test fails in it
       - name: Run Unit Tests
         continue-on-error: true
-        run: mvn test --Dtest=CalcTest
+        run: mvn test -Dtest=CalcTest
         working-directory: ./demo
 
      #Run the Api tests,continue even if a single test fails in it
       - name: Run Api Tests
         continue-on-error: true
-        run: mvn test --Dtest=apiTest
+        run: mvn test -Dtest=apiTest
         working-directory: ./demo
 
       #Build a jar file
