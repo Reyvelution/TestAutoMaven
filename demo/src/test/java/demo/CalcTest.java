@@ -13,7 +13,7 @@ public class CalcTest {
 
     }
 
-    @Ignore
+    @Test
     public void addTwoNumbers_2() {
         int a = 3 + 5;
         Assert.assertTrue(a == 7);
