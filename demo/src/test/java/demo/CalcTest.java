@@ -8,7 +8,7 @@ public class CalcTest {
     @Test
     public void addTwoNumbers_1() {
         int a = 2 + 2;
-        System.out.println("Test Maven Auto Project");
+        System.out.println("Execute Unit Tests");
         Assert.assertTrue(a == 4);
 
     }
