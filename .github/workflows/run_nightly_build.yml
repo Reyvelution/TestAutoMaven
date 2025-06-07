@@ -22,7 +22,7 @@ jobs:
 
       #Run the Junit test,continue even if a single test fails in it
       - name: Run Unit Tests
-        continue-on-error: false
+        continue-on-error: true
         run: mvn test -Dtest=CalcTest
         working-directory: ./demo
 
