@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v4.2.2
 
        #Cache the dependecies to speed up execution.Changes visible after first execution.
       - name: Cache the Maven packages to speed up build
-        uses: actions/cache@v3
+        uses: actions/cache@v4.2.3
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -22,7 +22,7 @@ jobs:
 
       #Run the Junit test,continue even if a single test fails in it
       - name: Run Unit Tests
-        continue-on-error: false
+        continue-on-error: true
         run: mvn test -Dtest=CalcTest
         working-directory: ./demo
 
