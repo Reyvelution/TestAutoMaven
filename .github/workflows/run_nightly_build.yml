@@ -34,7 +34,7 @@ jobs:
      
       - name: Run UI Tests
         continue-on-error: true
-        run: mvn test -Dtest=uiTests
+        run: mvn test -Dtest=uiTest
         working-directory: ./demo
 
       #Build a jar file
