@@ -1,10 +1,12 @@
 package uiTests;
 
-import org.testng.annotations.Test;
+
 //import  com.microsoft.playwright.assertions.*;
 //import com.microsoft.playwright.options.AriaRole;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
