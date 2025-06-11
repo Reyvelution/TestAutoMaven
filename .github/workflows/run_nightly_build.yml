@@ -31,6 +31,11 @@ jobs:
         continue-on-error: true
         run: mvn test -Dtest=apiTest
         working-directory: ./demo
+     
+      - name: Run UI Tests
+        continue-on-error: true
+        run: mvn test -Dtest=uiTests
+        working-directory: ./demo
 
       #Build a jar file
       - name: Build with Maven
