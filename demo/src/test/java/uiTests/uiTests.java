@@ -1,15 +1,14 @@
 package uiTests;
 
 import org.testng.annotations.Test;
-//import  com.microsoft.playwright.assertions.*;
-//import com.microsoft.playwright.options.AriaRole;
+
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
 import com.microsoft.playwright.BrowserType;
-//import com.microsoft.playwright.Locator;
+
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
@@ -29,8 +28,7 @@ public class uiTests {
     p.locator("#password").fill("secret_sauce");
     p.locator("#login-button").click();
 
-    // Locator link = p.getByRole(AriaRole.LINK, new
-    // Page.GetByRoleOptions().setName("null"));
+    
 
     try {
       assertThat(p.locator("text=Sauce Labs Backpack")).isVisible();
