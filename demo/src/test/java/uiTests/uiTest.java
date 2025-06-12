@@ -1,6 +1,5 @@
 package uiTests;
 
-
 //import  com.microsoft.playwright.assertions.*;
 //import com.microsoft.playwright.options.AriaRole;
 
@@ -15,6 +14,9 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
+import Pages.loginPage;
+import Pages.productPage;
+
 public class uiTest {
 
   @Test
@@ -27,15 +29,13 @@ public class uiTest {
     p.navigate("https://www.saucedemo.com/");
     Thread.sleep(2000);
 
-    p.locator("#user-name").fill("standard_user");
-    p.locator("#password").fill("secret_sauce");
-    p.locator("#login-button").click();
+    loginPage loginCrd = new loginPage(p);
+    loginCrd.login("standard_user", "secret_sauce");
 
-    // Locator link = p.getByRole(AriaRole.LINK, new
-    // Page.GetByRoleOptions().setName("null"));
+    productPage product = new productPage(p);
 
     try {
-      assertThat(p.locator("text=Sauce Labs Backpack")).isVisible();
+      product.verifyLinkIsPresent();
       System.out.println("Link is present");
     } catch (Exception e) {
       System.out.println(e.toString());
