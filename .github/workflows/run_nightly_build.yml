@@ -44,7 +44,7 @@ jobs:
 
       - name: Test Report
         uses: dorny/test-reporter@v2
-        if: ${{ !cancelled() }}       # run this step even if previous step failed
+        #if: ${{ !cancelled() }}       # run this step even if previous step failed
         with:
           name: JUnit Tests            # Name of the check run which will be created
           path: ./demo/target/surefire-reports/*.xml    # Path to test results
