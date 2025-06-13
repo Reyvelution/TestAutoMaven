@@ -5,6 +5,8 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
+import io.qameta.allure.Step;
+
 public class productPage {
 
     private final Page p;
@@ -17,6 +19,7 @@ public class productPage {
     
     }
 
+    @Step("Verify the link is present")
     public void verifyLinkIsPresent()
     {
          assertThat(verifyLink).isVisible();

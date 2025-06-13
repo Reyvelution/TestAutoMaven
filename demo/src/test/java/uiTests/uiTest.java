@@ -16,9 +16,21 @@ import com.microsoft.playwright.Playwright;
 
 import Pages.loginPage;
 import Pages.productPage;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
+
+@Epic("Web Application Regression Testing using JUnit5")
+@Feature("Login Page Tests")
 
 public class uiTest {
 
+  @Severity(SeverityLevel.NORMAL)
+  @Description("Test Description : Verify the title of Login Page")
+  @Story("Title of Login Page")
   @Test
   public void uiTest_1() throws InterruptedException {
 
