@@ -20,6 +20,12 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2  
 
+      #Execute Maven clean goals
+      - name: Maven Clean
+        continue-on-error: true  
+        run: mvn clean
+        working-directory: ./demo
+
       #Run the Junit test,continue even if a single test fails in it
       - name: Run Unit Tests
         continue-on-error: true
