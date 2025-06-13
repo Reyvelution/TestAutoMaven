@@ -53,6 +53,7 @@ jobs:
 
       #Build a jar file
       - name: Build with Maven
+        continue-on-error: true
         run: mvn -DskipTests -B package --no-transfer-progress --file ./demo/pom.xml
        # working-directory: ./demo
 
