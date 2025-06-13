@@ -36,20 +36,23 @@ jobs:
         continue-on-error: true
         run: mvn test -Dtest=apiTest
         working-directory: ./demo
-     
+
+       #Run UI Tests
       - name: Run UI Tests
         continue-on-error: true
         run: mvn test -Dtest=uiTest
         working-directory: ./demo
 
+     #Generate Test Report upon parsing xmls in the target/surefire folder
       - name: Test Report
         uses: dorny/test-reporter@v2
-        #if: ${{ !cancelled() }}       # run this step even if previous step failed
+        if: ${{ !cancelled() }}       # run this step even if previous step failed
         with:
           name: JUnit Tests            # Name of the check run which will be created
           path: ./demo/target/surefire-reports/*.xml    # Path to test results
           reporter: java-junit  
-      
+          fail-on-error: false
+
 
       #Build a jar file
       - name: Build with Maven
@@ -62,3 +65,5 @@ jobs:
         with:
           name: demo.jar
           path: ./demo/target/*demo*.jar
+
+      
