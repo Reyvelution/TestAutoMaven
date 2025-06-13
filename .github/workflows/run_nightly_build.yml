@@ -22,7 +22,6 @@ jobs:
 
       #Execute Maven clean goals
       - name: Maven Clean
-        continue-on-error: true  
         run: mvn clean
         working-directory: ./demo
 
