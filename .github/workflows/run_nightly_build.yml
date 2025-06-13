@@ -37,6 +37,15 @@ jobs:
         run: mvn test -Dtest=uiTest
         working-directory: ./demo
 
+      - name: Test Report
+        uses: dorny/test-reporter@v2
+        if: ${{ !cancelled() }}       # run this step even if previous step failed
+        with:
+          name: JEST Tests            # Name of the check run which will be created
+          path: reports/jest-*.xml    # Path to test results
+          reporter: jest-junit  
+      
+
       #Build a jar file
       - name: Build with Maven
         run: mvn -DskipTests -B package --no-transfer-progress --file ./demo/pom.xml
